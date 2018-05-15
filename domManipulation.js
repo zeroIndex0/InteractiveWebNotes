@@ -132,8 +132,8 @@ var changeAttrATagHref = document.querySelector("a");
 //get the attribute name / location
 console.log(changeAttrATagHref.getAttribute("href"));
 //change the attribute text and link
-changeAttrATagHref.textContent = "google.com";
-changeAttrATagHref.setAttribute("href", "https://www.google.com");
+changeAttrATagHref.textContent = "My Random Code Repository ( cool stuff in there )";
+changeAttrATagHref.setAttribute("href", "https://github.com/zeroIndex0/randomCode");
 
 var changeAttrImgTag = document.querySelector("img");
 //get the image name / location
