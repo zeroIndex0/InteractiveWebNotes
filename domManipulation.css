@@ -1,0 +1,60 @@
+body {
+    background: gray;
+}
+
+li {
+    margin-left: 20px;
+}
+
+#pageHeader {
+    text-align: center;
+}
+
+#domCommandsh3 {
+    margin-bottom: 0%;
+}
+
+#domCommandsh5 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.jsManipulate {
+    /* text-align: center; */
+    margin-left: 5%;
+}
+
+/* so putting the class in the li didnt change the visual output
+   I had to put it in the deeper h5 tag and then it worked...
+   That kind of stuff could be very annoying in the future
+   or hopefully show how much knowledge I gain later when looking back
+   at how silly this issue could be.  Only time will tell */
+.sideNotesh5 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    /* added a line through all the text since it's no longer relevant, but I want to keep it */
+    text-decoration: line-through;
+}
+
+/* adding / removing classes using JavaScript
+   the created class is here but we attach using js */
+.addRemoveClasses {
+    color: blue;
+    border: 5px solid green;
+    margin-right: 20%;
+}
+
+.painClass {
+    color: #3498db;
+    background: #7F0000;
+    margin-right: 30%;
+}
+
+.textHoverClass {
+    color: rgb(197, 67, 67);
+    background: pink;
+    border: 3px dashed lightcyan;
+    margin-right: 75%;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
