@@ -224,15 +224,25 @@ for( let i = 1; i <= clickedLI.length; i++) {
     if(i < Math.round(clickedLI.length / 2)) {
         clickedLI[i-1].addEventListener("click", function () {
             this.textContent = "OUCH, that hurts really bad!";
+            console.log(Math.round(clickedLI.length) / 2 + " i: " + i);
         });
-    } else if ((i >= Math.round(clickedLI.length / 2)) && (i !== clickedLI.length)) {
+    } else if ((i >= Math.round(clickedLI.length / 2)) && (i !== clickedLI.length) && (i !== clickedLI.length-1)) {
         clickedLI[i-1].addEventListener("click", function () {
             this.textContent = "You're mangling up my insides";
+            console.log(Math.round(clickedLI.length) / 2 + " i: " + i);
+        });
+    } else if (i === clickedLI.length-1) {
+        clickedLI[i-1].addEventListener("click", function () {
+            this.classList.add("painClass");
+            this.textContent = "Please... stop clicking me...";
+            console.log(Math.round(clickedLI.length) / 2 + " i: " + i);
+            console.log("Argh");
         });
     } else {
         clickedLI[i-1].addEventListener("click", function () {
             this.classList.add("painClass");
             this.textContent = "Please, stop, I can't take anymor... beep.. be.. b..";
+            console.log(Math.round(clickedLI.length) / 2 + " i: " + i);
         });
     }
 }
