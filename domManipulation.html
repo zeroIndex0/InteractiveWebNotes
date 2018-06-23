@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DOM Manipulation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="domManipulation.css" />
+    <script src="domManipulation.js"></script>
+</head>
+
+<body>
+    <h1 id="pageHeader">DOM Manipulation</h1>
+
+    <h2>What is the DOM?</h2>
+
+    <ul>
+        <li>stands for:
+            <strong>Document Object Model</strong>
+        </li>
+        <li>The interface between the JavaScript and the html and css</li>
+        <li>Change things</li>
+        <li>Animate things</li>
+        <li>Messing around with html and css with JavaScript</li>
+        <li>Behind the scences the DOM is created from html</li>
+        <li>Every element is modeled into the DOM</li>
+        <li>The document is the "root node"</li>
+        <li>The entire model of everything html and css is called the document</li>
+        <li>The document is the "root node"</li>
+        <li>
+            <em>
+                <strong>Everything lives inside the document</strong>
+            </em>
+        </li>
+        <ul>
+            <li>Which is why we use "
+                <strong>
+                    <em>document.method()</em>
+                </strong>"</li>
+        </ul>
+        <ul>
+            <li>
+                <h3 id="domCommandsh3">Some Commands to run on the document</h3>
+                <h5 id="domCommandsh5">
+                    <em>(These commands are to be run in the browser's console)</em>
+                </h5>
+                <li>
+                    <strong>document.URL;</strong>
+                </li>
+                <ul>
+                    <li>Shows the url of the page you are on</li>
+                </ul>
+                <li>
+                    <strong>document.head;</strong>
+                </li>
+                <ul>
+                    <li>Is a list of all the links on the page; all the anchor tags</li>
+                </ul>
+                <li>
+                    <strong>document.body;</strong>
+                </li>
+                <ul>
+                    <li>The entire body with every element inside of it</li>
+                </ul>
+                <li>
+                    <strong>document.links;</strong>
+                </li>
+                <ul>
+                    <li>Show the information inside the head element</li>
+                </ul>
+            </li>
+            <li>
+                <strong>console.dir(document)</strong>
+                <ul>
+                    <em>After typing the command:</em>
+                    <li>Will show you the actual document</li>
+                    <li>'
+                        <strong>body</strong>' is where all the elements are listed</li>
+                    <li>There are also many other things to look at</li>
+                    <li>seriously, try this out, its like real raw data</li>
+                    <li>The inner workings of html and what browers see</li>
+                    <li>And how you can use it with JavaScript</li>
+                    <li>The document holds A LOT of properities in its structure</li>
+                    <li>And it is a structure, its a crazy amount of structure and content</li>
+                    <li>seriously, look at it, its nuts</li>
+                </ul>
+            </li>
+        </ul>
+    </ul>
+    <h3 class="jsManipulate">Some JavaScrip commmands used to manipulate the DOM</h3>
+    <ul>
+        <li>
+            <strong>document.getElementById()</strong>
+        </li>
+        <ul>
+            <li>using
+                <strong>console.dir(document.getElementById(IdName))</strong> will show you all of its properties</li>
+            <li>looking through the console.dir() it looks like
+                <strong>
+                    <em>textContent</em>
+                </strong> is where the text is stored, lets find out!</li>
+            <li id="byId">GETELEMENTBYID PLACEHOLDER, this text will change by JavaScript</li>
+        </ul>
+        <li>
+            <strong>document.getElementsByClassName()</strong>
+        </li>
+        <ul>
+            <li>Kind of just like it sounds. Grabs all classes of the given name</li>
+            <li class="byClass">GET ELEMENTS BY CLASS PLACEHOLDER, will be changed with JavaScript</li>
+            <li class="byClass">GET ELEMENTS BY CLASS PLACEHOLDER, will be changed with JavaScript</li>
+        </ul>
+        <li>
+            <strong>document.getElementsByTagName()</strong>
+        </li>
+        <ul>
+            <li>Gets elements based on the tag name aka elements</li>
+            <li>It will get 'li' 'h2' 'h3' 'ul' 'strong' etc...</li>
+            <li>In this example I use tag since I'm only using it here</li>
+            <li>maybe not the best choice, but Im still new to html</li>
+            <li>honestly, I don't even know what the tag 'tag' is...</li>
+            <li>
+                <tag>TAGNAME PLACEHOLDER, will be changed with JavaScript</tag>
+            </li>
+            <li>
+                <tag>TAGNAME PLACEHOLDER, will be changed with JavaScript</tag>
+            </li>
+        </ul>
+        <li>
+            <strong>document.querySelector()</strong>
+        </li>
+        <ul>
+            <li>querySelector is a relatively new method</li>
+            <li>You can pull out classes or id's by the same syntax you would use with css</li>
+            <li>A css 'style selector'</li>
+            <li>Important to note, it only returns one tag, the first one seen</li>
+            <li id="querySelectorDemoId">QUERYSELECTOR PLACEHOLDER</li>
+            <li class="querySelectorDemoClass">QUERYSELECTOR PLACEHOLDER</li>
+            <li class="querySelectorDemoClass">querySelector only returns the first match, therefore this class will remain unchanged by JavaScript, even though
+                it's the same class as the above line</li>
+        </ul>
+        <li>
+            <strong>document.querySelectorAll()</strong>
+        </li>
+        <ul>
+            <li>querySelectorAll is relatively new as well</li>
+            <li>It returns all matching tags give as an argument</li>
+            <li>anything that requres an index can be taken at the time you call the document.method()</li>
+            <li>Ex. var =
+                <strong>
+                    <em>document.querySelectorAll("tag")[index]</em>
+                </strong> and that will give you the object only at that index, handy</li>
+            <li id="querySelectorAllDemoId">QUERYSELECTOR ALLLL PLACEHOLDER</li>
+            <li class="querySelectorAllDemoClass">QUERYSELECTOR ALLLL PLACEHOLDER</li>
+            <li class="querySelectorAllDemoClass">QUERYSELECTOR ALLLL PLACEHOLDER</li>
+        </ul>
+    </ul>
+
+    <h3 class="jsManipulate">What to do now the tag is in your possession</h3>
+    <ul>
+        <li>
+            <strong>Changing an elements style:</strong>
+        </li>
+        <ul>
+            <li>The style property is a huge property with hundreds of options</li>
+            <li>All the options you can use with CSS</li>
+            <li>Keep in mind, if you are using JavaScript to change a lot of styles, you might want to take a different route.
+                Thats what CSS is for</li>
+            <li>I digress, here are a few style properties:
+                <ul>
+                    <li>tag.style.color</li>
+                    <li>tag.style.border</li>
+                    <li>tag.style.fontSize</li>
+                    <li>tag.style.background</li>
+                    <li>tag.style.marginTop</li>
+                </ul>
+            </li>
+            <li id="changeElementsStyle">PLACEHOLDER</li>
+        </ul>
+
+        <li>
+            <strong>Adding/removing classes</strong>
+        </li>
+        <ul>
+            <li>Instead of changing each element when something happens</li>
+            <li>We can have a pre-made style class and add the class to the element</li>
+            <li class="classToBeChanged">PLACEHOLDER</li>
+        </ul>
+
+        <li>Changing the content of a tag</li>
+        <ul>
+            <li>Honestly, the best thing to do is print the object and look through the console to find the specific piece of
+                info you want to change</li>
+            <li>
+                <em>var tag = document.querySelector("tag")</em> then
+                <em>console.log(tag)</em>
+            </li>
+            <li>There is
+                <strong>caution</strong> to be had when using textContent as it will overwrite any tags that are used inside the
+                textContent
+            </li>
+            <li>In other words,
+                <strong>these tags</strong>
+                <em>would go</em>
+                <strong>away</strong>
+            </li>
+            <li class="textContents">But
+                <strong>we can</strong>
+                <em>use something called</em>
+                <strong>innerHTML</strong>
+                <em>to write tags into the new text content matching the old locations</em>
+            </li>
+            <li class="textContents">PLACEHOLDER</li>
+            <li>Future me here talking to past me: Look into the
+                <strong>span</strong> element if you want to change any textContent. It will save you hours of headache, time and
+                dreaded 'workarounds'</li>
+        </ul>
+
+        <li>Changing attributes(src, href, ect.) with
+            <strong>getAttribute()</strong> and
+            <strong>setAttribute()</strong>
+        </li>
+        <ul>
+            <li>Image Sliders can be created by changing the 'src' (source) of an image</li>
+            <li>var.getAttribute(attribute_to_get); like an href getAttribute("href")</li>
+            <li>var.setAttribute(attribute_to_get, what_to_change_it_to); setAttribute("href", "https://www.whateverLinkYouWant.com");</li>
+            <li>
+                <a href="#">PLACEHOLDER LINK</a>
+            </li>
+            <li>
+                <img width="100" src="#">
+            </li>
+        </ul>
+    </ul>
+
+    <ul>
+        <!-- Adding the class to the li didnt change the visuals
+             Maybe because li is futher out than the h5 and the 
+             h5 holds all the text, so thats what was needed?
+             But you would think that wouldnt matter since the h5 inside
+             would have to match up to the outter li... strange -->
+        <li>
+            <h5 class="sideNotesh5">As a side note here. I feel like if you have some li's and want to change some of them</h5>
+        </li>
+        <li>
+            <h5 class="sideNotesh5">You could possibly classList.add(class) and then step through each one with [index]</h5>
+        </li>
+        <li>
+            <h5 class="sideNotesh5">That is also if classList can be used like that</h5>
+        </li>
+        <li>
+            <h5 class="sideNotesh5">Nope, can't do it that way, you would have to be one step back</h5>
+        </li>
+        <li>
+            <h5 class="sideNotesh5">Wait, what aobut get child then textContent?</h5>
+        </li>
+        <li>
+            <h5 class="sideNotesh5">
+                <strong>
+                    <em>tagName.childNodes[index].textContent</em>
+                </strong> could work, possbily</h5>
+        </li>
+        <li>
+            <h5 class="sideNotesh5">But since that seems complicated, that means there is probably an easier way!</h5>
+        </li>
+        <li>
+            <h5 class="sideNotesh5">I could just add a class to the li's I want to change then call that class to change whatever I want</h5>
+        </li>
+        <li>
+            <h5 class="sideNotesh5">I was going to delete these side notes, but I'll leave them in. They can be ignored though</h5>
+        </li>
+        <li>
+            <h5 class="sideNotesh5">actually, I'll just strike through all of the text</h5>
+        </li>
+    </ul>
+
+
+
+    <!--==================== Now on to events! ============-->
+
+    <h3 class="jsManipulate"> Dom Events!! Events are everywhere!</h3>
+    <h3 class="jsManipulate"> Below are some examples of how you can use events</h3>
+    <ul>
+        <li>
+            <strong>tag.addEventListener(type, functionWeWant)</strong> will add a listener to the element we choose</li>
+        <li>The way the events work are by attaching them to specific elements. Some examples could be:
+            <ul>
+                <li>Listen for a click on a
+                    < button> tag</li>
+                <li>Listen for a hover event on the
+                    < h1> tag</li>
+                <li>Listen for a keypress event on a text input</li>
+            </ul>
+        </li>
+
+        <li>We might want to do something when:
+            <ul>
+                <li>Clicking on a
+                    <button id="liButton">button</button>
+                </li>
+                <li id="textChangeOnClick">
+                    <em>Click the above button</em>
+                </li>
+                <li>Hovering over a
+                    <a id="hoverLinkId" href="#">link</a>
+                </li>
+                <li id="textHoverId">Hovering over some text</li>
+                <li>Dragging and Dropping THERE IS NO DRAGGING AND/OR DROPPING</li>
+                <li>Pressing the Enter key OR PRESSING ENTER</li>
+                <li>Clicking on text
+                    <ul>
+                        <li class="clickableLIs">We can make clickable text</li>
+                        <li class="clickableLIs">The text in this section is clickable</li>
+                        <li class="clickableLIs">Sure, go ahead and try it</li>
+                        <li class="clickableLIs">Please, click me, or any of the others</li>
+                        <li class="clickableLIs">I enjoy being clicked by your mouse</li>
+                        <li class="clickableLIs">It really is a lovely mouse with such a satisfying sound</li>
+                        <li class="clickableLIs">My insides feel amazing when you click, after all I am a machine</li>
+                        <li class="clickableLIs">Im code eagerly waiting for you to change me
+                            <3</li>
+                    </ul>
+                    </li>
+            </ul>
+            </li>
+    </ul>
+
+
+    <h2>Would you like to change the canvas?</h2>
+    <ul>
+        <button id="canvasButton">Change Canvas</button>
+    </ul>
+    <canvas id="changeCanvas"></canvas>
+
+
+
+    <!-- placing the script tag in the head caused issues.  I could not get
+    the javascript to work.  I read that it has something to do with the
+    html not being loaded yet for the javascript to be able to change it -->
+    <script src="domManipulation.js"></script>
+</body>
+
+</html>
