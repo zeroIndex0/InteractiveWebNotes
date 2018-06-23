@@ -25,7 +25,7 @@ var h1 = document.querySelector("#pageHeader");
 //on this machine, its telling me there is no such thing as document
 //and i know that is not the case
 
-if(h1 !== null) {
+if (h1 !== null) {
     console.log("h1 has stuff in it! Yet I get 'TypeError: h1 is null [Learn More]'.  What a werid and annoying bug!");
 }
 
@@ -145,20 +145,20 @@ changeAttrImgTag.setAttribute("src", "Comparison.jpg");
 
 // ====================== NOW WE ARE INTO EVENTS ====================\\
 
-var button = document.querySelector("button");
+var button = document.getElementById("liButton");
 // If you are going to change the text of an element and there is a tag
 // inside that element, you might need to study something else or leave
 // it alone altogether, as changing the innerHTML will break any
 // eventListener() thats attached to any HTML in that tag!
 // ******************* I COULD HAVE USED A SPAN ********************
-button.addEventListener("click", function() {
-    console.log("You Clicked The Button");  
+button.addEventListener("click", function () {
+    console.log("You Clicked The Button");
     var textUnderButton = document.querySelector("#textChangeOnClick");
-    if(textUnderButton.innerHTML === "<em>Click the above button</em>") {
+    if (textUnderButton.innerHTML === "<em>Click the above button</em>") {
         textUnderButton.innerHTML = "<em><strong>You clicked the button</strong></em><ul><li><em>I'm just so gosh darn proud of you for clicking the button <3</em><ul><li>Like, really proud<ul><li>I'm radiating joy</li><li>okay, I'll stop now</li><li>I'm stopping</li><li>I just had to let you know</li><li>that I'm proud of you</li><li>for smashing that button</li><ul><li>Serious, I'm done now</li><li>because now I'm just wasting my time</li></ul><li>all</li></ul><li>most</li></li></ul><li>DONE!!</li></li></ul>";
     } else {
         textUnderButton.innerHTML = "<em>Click the above button</em>";
-    }    
+    }
     // *************** I COULD HAVE USED A SPAN ********************
     // IMPORTANT THINGS TO REMEMBER IN THIS FAILED ATTEMPT AT CHANGING DATA INSIDE THE INNERHTML
     // AT LEAST WHEN USING AN EVENT LISTENER
@@ -180,7 +180,7 @@ button.addEventListener("click", function() {
 
 //hovering over a link - would also work with any other tag id class you want it to work with inside HTML
 var hoverLink = document.querySelector("#hoverLinkId");
-hoverLink.addEventListener("mouseover", function() {
+hoverLink.addEventListener("mouseover", function () {
     hoverLink.style.background = "orange";
     hoverLink.style.color = "yellow";
 });
@@ -190,10 +190,10 @@ hoverLink.addEventListener("mouseleave", function () {
 });
 
 var hoverText = document.getElementById("textHoverId");
-hoverText.addEventListener("mouseover", function() {
+hoverText.addEventListener("mouseover", function () {
     hoverText.classList.toggle("textHoverClass");
 });
-hoverText.addEventListener("mouseleave", function() {
+hoverText.addEventListener("mouseleave", function () {
     hoverText.classList.toggle("textHoverClass");
 });
 
@@ -201,15 +201,15 @@ hoverText.addEventListener("mouseleave", function() {
 //not so out of place at the top.  I know it's better to put it at the top in terms of
 //readabilty, but I feel for note taking, its much better down here with the rest
 //sets a random color to the "page title" the first h1 in the page, not the tag title
-h1.addEventListener("click", function() {
+h1.addEventListener("click", function () {
     let choice = Math.floor(Math.random() * 5) + 1;  //random number between 1 and 5 inclusive
-    if(choice === 1) {
+    if (choice === 1) {
         h1.style.color = "pink";
-    } else if(choice === 2) {
+    } else if (choice === 2) {
         h1.style.color = "red";
-    } else if(choice === 3) {
+    } else if (choice === 3) {
         h1.style.color = "orange";
-    } else if(choice === 4) {
+    } else if (choice === 4) {
         h1.style.color = "blue";
     } else {
         h1.style.color = "yellow";
@@ -220,29 +220,42 @@ h1.addEventListener("click", function() {
 //loop though each li in the given class and change its text after its been clicked
 var clickedLI = document.getElementsByClassName("clickableLIs");
 //I never thought i would say this, but, I really miss integer math
-for( let i = 1; i <= clickedLI.length; i++) {
-    if(i < Math.round(clickedLI.length / 2)) {
-        clickedLI[i-1].addEventListener("click", function () {
+for (let i = 1; i <= clickedLI.length; i++) {
+    if (i < Math.round(clickedLI.length / 2)) {
+        clickedLI[i - 1].addEventListener("click", function () {
             this.textContent = "OUCH, that hurts really bad!";
-            console.log(Math.round(clickedLI.length) / 2 + " i: " + i);
         });
-    } else if ((i >= Math.round(clickedLI.length / 2)) && (i !== clickedLI.length) && (i !== clickedLI.length-1)) {
-        clickedLI[i-1].addEventListener("click", function () {
+    } else if ((i >= Math.round(clickedLI.length / 2)) && (i !== clickedLI.length)) {
+        clickedLI[i - 1].addEventListener("click", function () {
             this.textContent = "You're mangling up my insides";
-            console.log(Math.round(clickedLI.length) / 2 + " i: " + i);
-        });
-    } else if (i === clickedLI.length-1) {
-        clickedLI[i-1].addEventListener("click", function () {
-            this.classList.add("painClass");
-            this.textContent = "Please... stop clicking me...";
-            console.log(Math.round(clickedLI.length) / 2 + " i: " + i);
-            console.log("Argh");
         });
     } else {
-        clickedLI[i-1].addEventListener("click", function () {
+        clickedLI[i - 1].addEventListener("click", function () {
             this.classList.add("painClass");
             this.textContent = "Please, stop, I can't take anymor... beep.. be.. b..";
-            console.log(Math.round(clickedLI.length) / 2 + " i: " + i);
         });
     }
 }
+
+var canvasButton = document.getElementById("canvasButton");
+var canvas = document.getElementById("changeCanvas");
+var ctx = canvas.getContext("2d");
+canvas.classList.add("canvasToggle");
+canvasButton.addEventListener("click", function () {
+    if (canvasButton.textContent === "Change Canvas") {
+        canvas.classList.toggle("canvasToggle");
+        for (let y = 0; y < canvas.height; y++) {
+            for (let x = 0; x < canvas.width; x++) {
+                let zoom = 5;
+                let value = Math.floor(x / zoom * y / zoom) % 2;
+                ctx.fillStyle = value ? "white" : "black";
+                ctx.fillRect(x, y, 1, 1); //pixel is a 1x1 square
+            }
+        }
+    canvasButton.textContent = "Revert Back";
+    } else {
+        //revert back
+        canvasButton.textContent = "Change Canvas";
+        canvas.classList.toggle("canvasToggle");
+    }
+});
