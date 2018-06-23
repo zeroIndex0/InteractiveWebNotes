@@ -6,6 +6,10 @@ li {
     margin-left: 20px;
 }
 
+canvas {
+    border: 1px solid black;
+}
+
 #pageHeader {
     text-align: center;
 }
@@ -57,4 +61,8 @@ li {
     margin-right: 75%;
     text-decoration: line-through;
     opacity: 0.5;
+}
+
+.canvasToggle {
+    display: none;
 }
