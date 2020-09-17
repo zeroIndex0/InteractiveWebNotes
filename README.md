@@ -1,6 +1,6 @@
 # InteractiveWebNotes
 
-The website link is in the description above, go ahead and take a look.
+~The website link is in the description above, go ahead and take a look.~ I don't see a link or a description 'above'.
 
 I thought I might as well try out Github Pages by posting the notes I have been taking recently.
 
